@@ -1,0 +1,490 @@
+HTML
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultoria em Data Analytics e IA</title>
+
+    <!-- ========================================================================= -->
+    <!-- INÍCIO DO ESPAÇO PARA O SNIPPET DO GOOGLE TAG MANAGER (HEAD)              -->
+    <!-- Insira o código <script> do GTM aqui, o mais alto possível na tag <head>  -->
+    <!-- ========================================================================= -->
+
+    <!-- Fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ========================================================================= */
+        /* DESIGN SYSTEM & ESTILOS (Inspiração DP6: Tecnologia, Dados, Azul/Ciano)   */
+        /* ========================================================================= */
+        :root {
+            --azul-escuro: #0B192C; /* Cor institucional base */
+            --azul-medio: #1A365D;
+            --ciano-destaque: #00D4FF; /* Cor de ação/tecnologia */
+            --branco: #FFFFFF;
+            --cinza-claro: #F4F7F9;
+            --texto-escuro: #333333;
+            --texto-claro: #E2E8F0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--cinza-claro);
+            color: var(--texto-escuro);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; }
+        ul { list-style: none; }
+
+        /* HEADER */
+        header {
+            background-color: var(--azul-escuro);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header .logo {
+            color: var(--branco);
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        header .logo span {
+            color: var(--ciano-destaque);
+        }
+
+        header nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        header nav a {
+            color: var(--texto-claro);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: var(--ciano-destaque);
+        }
+
+        .btn-header {
+            background-color: var(--ciano-destaque);
+            color: var(--azul-escuro);
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 800;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn-header:hover {
+            background-color: #00b3d6;
+            transform: translateY(-2px);
+        }
+
+        /* HERO SECTION */
+        #hero {
+            background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-medio) 100%);
+            color: var(--branco);
+            padding: 100px 5%;
+            text-align: center;
+        }
+
+        #hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #hero h1 span {
+            color: var(--ciano-destaque);
+        }
+
+        #hero p {
+            font-size: 18px;
+            color: var(--texto-claro);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            background-color: var(--ciano-destaque);
+            color: var(--azul-escuro);
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: 800;
+            border-radius: 4px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-cta:hover {
+            background-color: #00b3d6;
+            transform: scale(1.05);
+        }
+
+        /* SERVIÇOS */
+        #servicos {
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        #servicos h2 {
+            font-size: 32px;
+            color: var(--azul-escuro);
+            margin-bottom: 50px;
+        }
+
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: var(--branco);
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+            width: 100%;
+            max-width: 300px;
+            border-top: 4px solid var(--ciano-destaque);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            color: var(--azul-escuro);
+            margin-bottom: 15px;
+        }
+
+        .card a.link-saiba-mais {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--ciano-destaque);
+            font-weight: 600;
+        }
+
+        /* CONTATO (FORMULÁRIO) */
+        #contato {
+            background-color: var(--azul-escuro);
+            color: var(--branco);
+            padding: 80px 5%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .form-container {
+            background-color: var(--branco);
+            padding: 40px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 500px;
+            color: var(--texto-escuro);
+            box-shadow: 0 20px 25px rgba(0,0,0,0.1);
+        }
+
+        .form-container h2 {
+            margin-bottom: 10px;
+            color: var(--azul-escuro);
+            text-align: center;
+        }
+
+        .form-container p {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--ciano-destaque);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--azul-escuro);
+            color: var(--branco);
+            padding: 15px;
+            font-size: 16px;
+            font-weight: 800;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--ciano-destaque);
+            color: var(--azul-escuro);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #050C16;
+            color: var(--texto-claro);
+            padding: 40px 5%;
+            text-align: center;
+        }
+
+        footer nav {
+            margin-bottom: 20px;
+        }
+
+        footer nav a {
+            color: var(--texto-claro);
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        footer nav a:hover {
+            color: var(--ciano-destaque);
+        }
+
+        footer p {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 20px; }
+            header nav ul { flex-direction: column; text-align: center; }
+            #hero h1 { font-size: 36px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- ========================================================================= -->
+    <!-- INÍCIO DO ESPAÇO PARA O SNIPPET DO GOOGLE TAG MANAGER (NOSCRIPT - BODY)   -->
+    <!-- Insira o código <noscript> do GTM aqui, logo após a abertura do <body>    -->
+    <!-- ========================================================================= -->
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">DATA<span>TECH</span></div>
+        <nav>
+            <ul>
+                <li><a href="#servicos">Nossas Soluções</a></li>
+                <li><a href="#cases">Cases de Sucesso</a></li>
+                <li><a href="#contato" class="btn-header">Fale com um Consultor</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero">
+        <h1>Transforme Dados em <span>Decisões Estratégicas</span></h1>
+        <p>Potencialize o crescimento da sua empresa com nossas soluções avançadas em Data Analytics, Engenharia de Dados e Inteligência Artificial.</p>
+        <a href="#contato" class="btn-cta">Solicite uma Auditoria Gratuita</a>
+    </section>
+
+    <!-- SERVIÇOS/DIFERENCIAIS -->
+    <section id="servicos">
+        <h2>Nossos Diferenciais Técnicos</h2>
+        <div class="cards-container">
+            <div class="card">
+                <h3>Engenharia de Dados</h3>
+                <p>Estruturação de Data Lakes e Pipelines robustos para garantir a qualidade e fluxo das suas informações.</p>
+                <a href="#eng-dados" class="link-saiba-mais">Saiba mais sobre engenharia</a>
+            </div>
+            <div class="card">
+                <h3>Digital Analytics</h3>
+                <p>Mapeamento de jornada e implementação de DataLayers complexos para precisão em marketing.</p>
+                <a href="#analytics" class="link-saiba-mais">Saiba mais sobre analytics</a>
+            </div>
+            <div class="card">
+                <h3>IA & Machine Learning</h3>
+                <p>Modelos preditivos que antecipam comportamentos de mercado e otimizam sua conversão.</p>
+                <a href="#ia" class="link-saiba-mais">Saiba mais sobre IA</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULÁRIO DE CAPTURA -->
+    <section id="contato">
+        <div class="form-container">
+            <h2>Evolua sua Estratégia</h2>
+            <p>Preencha os dados abaixo e nosso time de especialistas entrará em contato com você.</p>
+            
+            <form id="leadForm">
+                <div class="form-group">
+                    <label for="nome">Nome Completo *</label>
+                    <input type="text" id="nome" name="nome" required placeholder="Ex: João da Silva">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail Corporativo *</label>
+                    <input type="email" id="email" name="email" required placeholder="joao@suaempresa.com.br">
+                </div>
+                <div class="form-group">
+                    <label for="cargo">Cargo / Empresa *</label>
+                    <input type="text" id="cargo" name="cargo" required placeholder="Ex: CMO na Tech LTDA">
+                </div>
+                <button type="submit" class="btn-submit" id="btn-enviar-form">Agendar Reunião</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <nav>
+            <a href="#termos">Termos de Uso</a>
+            <a href="#privacidade">Política de Privacidade</a>
+            <a href="#linkedin">LinkedIn</a>
+        </nav>
+        <p>&copy; 2026 DataTech Consulting. Uma LP Pedagógica.</p>
+    </footer>
+
+    <!-- ========================================================================= -->
+    <!-- SCRIPT DE TRACKING (DATALAYER) - ARQUITETURA E LÓGICA                     -->
+    <!-- ========================================================================= -->
+    <script>
+        /**
+         * LÓGICA DO DATALAYER PEDAGÓGICO
+         * 1. Inicializa o dataLayer caso não exista.
+         * 2. Função de sanitização estrita (lowercase, sem acento/caracteres especiais, espaços viram hífens).
+         * 3. Listener global de cliques (Event Delegation) para capturar <a> e <button>.
+         * 4. Validação de formulário antes de disparar o evento de 'submit'.
+         */
+
+        // 1. Inicialização do dataLayer
+        window.dataLayer = window.dataLayer || [];
+
+        // 2. Função de Sanitização Estrita
+        function sanitizarString(texto) {
+            if (!texto) return 'sem-texto';
+            return texto
+                .toLowerCase() // Transforma tudo em minúsculas
+                .normalize("NFD") // Decompõe caracteres acentuados
+                .replace(/[\u0300-\u036f]/g, "") // Remove os acentos matematicamente
+                .replace(/[^a-z0-9\s-]/g, "") // Remove qualquer caractere que não seja letra, número, espaço ou hífen
+                .trim() // Remove espaços em branco nas extremidades
+                .replace(/\s+/g, "-"); // Substitui espaços internos por hífens
+        }
+
+        // Configuração Global da Página (Pode ser dinâmica em SPAs, fixa aqui)
+        const NOME_DA_PAGINA = 'lp-pedagogica-data-tech';
+
+        // 3. Listener Global de Cliques (Delegação de Eventos)
+        document.addEventListener('click', function(event) {
+            // Busca o elemento clicado ou o elemento pai mais próximo que seja link ou botão
+            const elementoClicado = event.target.closest('a, button');
+
+            // Se clicou fora de um link ou botão, ou se o elemento for o botão de submit do form, ignoramos.
+            // (O submit tratamos separadamente para garantir a regra de validação de campos vazios).
+            if (!elementoClicado) return;
+            if (elementoClicado.type === 'submit') return; 
+
+            // Define custom_type dinâmico baseado no contexto (header, footer ou geral)
+            let customTypeBase = elementoClicado.tagName.toLowerCase() === 'a' ? 'link' : 'botao';
+            
+            // Adiciona o contexto geográfico do DOM
+            if (elementoClicado.closest('header')) {
+                customTypeBase += '-header';
+            } else if (elementoClicado.closest('footer')) {
+                customTypeBase += '-footer';
+            }
+
+            // Captura o texto do botão/link. Se for vazio, pega atributo aria-label ou um fallback.
+            let textoElemento = elementoClicado.innerText || elementoClicado.getAttribute('aria-label') || 'clique-desconhecido';
+
+            // Disparo do Evento no DataLayer
+            window.dataLayer.push({
+                'event': 'clique',
+                'custom_section': sanitizarString(NOME_DA_PAGINA),
+                'custom_type': sanitizarString(customTypeBase),
+                'custom_title': sanitizarString(textoElemento)
+            });
+
+            // LOG NO CONSOLE APENAS PARA FINS PEDAGÓGICOS (Pode ser removido em prod)
+            console.log("🔥 DataLayer Push disparado (Clique):", window.dataLayer[window.dataLayer.length - 1]);
+        });
+
+        // 4. Lógica de Envio de Formulário e Validação (Importante 1)
+        const formLead = document.getElementById('leadForm');
+        
+        if(formLead) {
+            formLead.addEventListener('submit', function(event) {
+                // Previne o envio real da página (comportamento padrão de LP pedagógica)
+                event.preventDefault();
+
+                // Captura os valores dos campos
+                const nome = document.getElementById('nome').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const cargo = document.getElementById('cargo').value.trim();
+
+                // Regra de Negócio: O datalayer NÃO DEVE disparar caso não tenha preenchido todos os campos.
+                // Como o HTML5 (atributo 'required') já barra o submit na interface na maioria dos casos, 
+                // fazemos aqui uma validação via JS para garantir a blindagem do disparo (evita disparos falsos).
+                if (nome !== '' && email !== '' && cargo !== '') {
+                    
+                    // Dispara evento de submit
+                    window.dataLayer.push({
+                        'event': 'clique',
+                        'custom_section': sanitizarString(NOME_DA_PAGINA),
+                        'custom_type': 'submit', // Fixo como submit
+                        'custom_title': sanitizarString('agendar-reuniao') // Baseado no texto do botão
+                    });
+
+                    // Feedback visual e log pedagógico
+                    console.log("✅ DataLayer Push disparado (Submit Válido):", window.dataLayer[window.dataLayer.length - 1]);
+                    alert("Formulário enviado com sucesso!\nVerifique o console para ver o DataLayer.");
+                    
+                    // Limpa o formulário após o sucesso
+                    formLead.reset();
+                } else {
+                    // Impede o disparo se por acaso a validação de required do HTML5 falhar ou for contornada
+                    console.warn("❌ Disparo de DataLayer abortado: Campos obrigatórios vazios.");
+                }
+            });
+        }
+    </script>
+</body>
+</html>
